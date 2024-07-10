@@ -84,7 +84,7 @@ def write_categories_to_json(categories: List[Category], filename: str):
         json.dump([category.__dict__ for category in categories], f, indent=4)
 
 
-def main() -> None:
+def category_scraper() -> None:
     logger.info("Starting script")
 
     results = []
@@ -105,4 +105,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    category_scraper()
