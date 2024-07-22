@@ -1,11 +1,11 @@
 import json
 import os
-from typing import Dict, Any, List
+from typing import Any
 
 from categories import category_scraper
 
 
-def get_categories() -> List[Dict[str, Any]]:
+def get_categories() -> list[dict[str, Any]]:
     if not os.path.exists("categories.json"):
         category_scraper()
 
@@ -14,3 +14,12 @@ def get_categories() -> List[Dict[str, Any]]:
 
     with open("categories.json", "r") as f:
         return json.load(f)
+
+
+def parse_str_to_int(text: str) -> int:
+    result = ""
+    for char in text:
+        if char.isdigit():
+            result += char
+
+    return int(result)
